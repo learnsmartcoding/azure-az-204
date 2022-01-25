@@ -12,6 +12,3 @@ New-AzAppServicePlan -Name $webappname -Location $location -ResourceGroupName $r
 
 # Create a web app
 New-AzWebApp -Name $webappname -Location $location -AppServicePlan $webappname -ResourceGroupName $rgname
-
-# Cleanup resource
-# Remove-AzResourceGroup -Name $webappname
