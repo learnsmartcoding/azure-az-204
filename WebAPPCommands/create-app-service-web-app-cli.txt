@@ -1,0 +1,13 @@
+az group create -n webapps-demo-rg -l eastus
+
+az appservice plan create --name webapps-demo-plan \
+  --resource-group webapps-demo-rg \
+  --sku f1 \
+  --is-linux
+  
+az webapp create -g webapps-demo-rg \
+  -p webapps-demo-plan \
+  -n lsc-webapp-cli \
+  --runtime "node|10.14"
+  
+az group delete -n webapps-demo-rg
